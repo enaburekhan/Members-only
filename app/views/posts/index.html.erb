@@ -3,14 +3,16 @@
 <h1>Posts</h1>
 
   <% @posts.each do |post| %>
-    <%= link_to 'show' posts_path(post) do %>  
+    <%= link_to posts_path(post) do %>  
       <div class="post-card">
         <p><%= post.title %></p>
         <%if user_signed_in?%>
-            <span>By: <%= post.author_name %></span>
+            <span>By: <%= post.author_name %></span><br/>
         <%end%>
         <p><%= post.body %></p>
+        <% if user_signed_in? %> 
         <td><%= link_to 'Destroy', destroy_user_session_path, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %> 
       </div>
     <% end %>
   <% end %>
