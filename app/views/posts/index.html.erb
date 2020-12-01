@@ -2,35 +2,18 @@
 
 <h1>Posts</h1>
 
-<table>
-  <thead>
-    <tr>
-      <% if user_signed_in?%>
-        <th>author_name</th>
-      <%end%>
-      <th>Title</th>
-      <th>Body</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @posts.each do |post| %>
-      <tr>
-        
-          <%if user_signed_in?%>
-            <td><%= post.author_name %></td>
-          <%end%>
-        <td><%= post.title %></td>
-        <td><%= post.body %></td>
-        <td><%= link_to 'Show', posts_path %></td>
-        <td><%= link_to 'Edit', edit_user_password_path(post) %></td>
+  <% @posts.each do |post| %>
+    <%= link_to 'show' posts_path(post) do %>  
+      <div class="post-card">
+        <p><%= post.title %></p>
+        <%if user_signed_in?%>
+            <span>By: <%= post.author_name %></span>
+        <%end%>
+        <p><%= post.body %></p>
         <td><%= link_to 'Destroy', destroy_user_session_path, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      </div>
     <% end %>
-  </tbody>
-</table>
+  <% end %>
+
 
 <br>
-
-<%= link_to 'New Post', new_post_path %>

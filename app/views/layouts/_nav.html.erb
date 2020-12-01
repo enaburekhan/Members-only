@@ -1,0 +1,11 @@
+<nav class="flex nav">
+    <h4>Members Only</h4>
+    <% if user_signed_in? %>
+        <div class="nav-item"><%= link_to('My Account', edit_user_registration_path) %></div>
+        <div class="nav-item"><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></div>
+        <div class="nav-item"><<%= link_to 'New Post', new_post_path %></div>
+    <% else %>
+        <div class="nav-item"><%= link_to "Login", new_user_session_path %></div>
+        <div class="nav-item"><%= link_to "Sign up", new_user_registration_path %></div>
+    <% end %>
+</nav>

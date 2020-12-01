@@ -1,0 +1,44 @@
+body {
+    margin: 0 !important;
+}
+
+nav {
+    background-color: #fc0808;
+    color: #fff;
+    padding: 0 15px;
+
+    h4 {
+        flex-grow: 1;
+    }
+}
+
+a {
+    color: inherit !important;
+    text-decoration: none;
+}
+
+a:hover {
+    background-color: transparent !important;
+    text-decoration: underline;
+}
+
+.nav-item {
+    margin: auto 20px;
+}
+
+.flex {
+    display: flex;
+}
+
+.container {
+    width: 1000px;
+    margin: 0 auto;
+    padding: 30px;
+    text-align: center;
+    background-color: rgb(238, 235, 235);
+
+    .post-card {
+        min-height: 70px;
+        border: 1px;
+    }
+}
