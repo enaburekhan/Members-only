@@ -33,6 +33,7 @@ To get this project set up on your local machine, follow these simple steps:
 - Add devise 'gem' to your gem file
 - Run bundle install
 - Run rails db:migrate.
+- Run rails server, to access the Puma server on the browser.
 
 
 ## Author
